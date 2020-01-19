@@ -12,7 +12,11 @@ import com.dmgkz.mcjobs.playerdata.CompCache;
 import com.dmgkz.mcjobs.playerdata.PlayerCache;
 import com.dmgkz.mcjobs.playerjobs.PlayerJobs;
 import com.dmgkz.mcjobs.playerjobs.data.CompData;
+<<<<<<< HEAD
 import com.gmail.nossr50.events.skills.repair.McMMOPlayerRepairCheckEvent;
+=======
+import com.gmail.nossr50.events.skills.McMMOPlayerRepairCheckEvent;
+>>>>>>> origin3/master
 
 public class McmmoRepairListener implements Listener{
 
@@ -20,7 +24,11 @@ public class McmmoRepairListener implements Listener{
 	public void mcMMOrepair(McMMOPlayerRepairCheckEvent event){
 		Player play = event.getPlayer();
 		String sJob = null;
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin3/master
 		Material item = event.getRepairedObject().getType();
 		Iterator<Entry<String, PlayerJobs>> it = PlayerJobs.getJobsList().entrySet().iterator();
 
@@ -33,12 +41,21 @@ public class McmmoRepairListener implements Listener{
 		while(it.hasNext()){
 			Entry<String, PlayerJobs> pair = it.next();
 			sJob = pair.getKey();
+<<<<<<< HEAD
 
 			if(PlayerCache.hasJob(play.getName(), sJob)){
 				CompCache comp = new CompCache(sJob, play.getLocation(), play, item, "repair");
 				CompData.getCompCache().add(comp);
 
 //				if(PlayerJobs.joblist.get(sJob).getData().compJob().compBlock(item, play, "repair")){
+=======
+			
+			if(PlayerCache.hasJob(play.getName(), sJob)){				
+				CompCache comp = new CompCache(sJob, play.getLocation(), play, item, "repair");
+				CompData.getCompCache().add(comp);
+				
+//				if(PlayerJobs.joblist.get(sJob).getData().compJob().compBlock(item, play, "repair")){					
+>>>>>>> origin3/master
 //				}
 			}
 		}

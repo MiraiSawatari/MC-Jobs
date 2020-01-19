@@ -28,6 +28,15 @@
 
 package com.dmgkz.mcjobs;
 
+<<<<<<< HEAD
+=======
+import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginDescriptionFile;
+
+>>>>>>> origin3/master
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -46,12 +55,15 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.logging.Level;
 
+<<<<<<< HEAD
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 
+=======
+>>>>>>> origin3/master
 /**
  * <p>
  * The metrics class obtains data about a plugin and submits statistics about it to the metrics backend.
@@ -112,7 +124,11 @@ public class Metrics {
      * The plugin configuration file
      */
     private final YamlConfiguration configuration;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin3/master
     /**
      * The plugin configuration file
      */
@@ -360,7 +376,11 @@ public class Metrics {
         data.append(encode("guid")).append('=').append(encode(guid));
         encodeDataPair(data, "version", description.getVersion());
         encodeDataPair(data, "server", Bukkit.getVersion());
+<<<<<<< HEAD
         encodeDataPair(data, "players", Integer.toString(Bukkit.getServer().getOnlinePlayers().size()));
+=======
+        encodeDataPair(data, "players", Integer.toString(Bukkit.getServer().getOnlinePlayers().length));
+>>>>>>> origin3/master
         encodeDataPair(data, "revision", String.valueOf(REVISION));
 
         // If we're pinging, append it

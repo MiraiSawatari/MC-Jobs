@@ -25,7 +25,11 @@ import com.palmergames.bukkit.towny.utils.PlayerCacheUtil;
 import de.diddiz.LogBlock.QueryParams.BlockChangeType;
 
 public class BlockPlace implements Listener {
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> origin3/master
 	@EventHandler(priority = EventPriority.LOW)
 	public void blockPlace(BlockPlaceEvent event) {
 		if(event.isCancelled())
@@ -34,25 +38,43 @@ public class BlockPlace implements Listener {
 			return;
 		if(event.getBlock().getType() == null)
 			return;
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin3/master
 		Player play = event.getPlayer();
 		Material block = event.getBlock().getType();
 		Material replaced = event.getBlockReplacedState().getType();
 		Location loc = event.getBlock().getLocation();
 		Integer timer = MCListeners.getTimeInMins();
+<<<<<<< HEAD
 
 
 		if((block == Material.DIODE_BLOCK_OFF || block == Material.REDSTONE_TORCH_OFF || block == Material.RAILS || block == Material.DETECTOR_RAIL || block == Material.POWERED_RAIL)
 		&& (replaced == Material.WATER || replaced == Material.STATIONARY_WATER || replaced == Material.LAVA || replaced == Material.STATIONARY_LAVA))
 			return;
 
+=======
+				
+
+		if((block == Material.DIODE_BLOCK_OFF || block == Material.REDSTONE_TORCH_OFF || block == Material.RAILS || block == Material.DETECTOR_RAIL || block == Material.POWERED_RAIL) 
+		&& (replaced == Material.WATER || replaced == Material.STATIONARY_WATER || replaced == Material.LAVA || replaced == Material.STATIONARY_LAVA))
+			return;
+		
+>>>>>>> origin3/master
 		if(MCListeners.isWorldGuard()){
 			if(!McJobs.getWorldGuard().canBuild(play, loc))
 				return;
 		}
 
+<<<<<<< HEAD
 		if(MCListeners.isTowny()){
 			if(!PlayerCacheUtil.getCachePermission(play, loc, block, TownyPermission.ActionType.BUILD))
+=======
+		if(MCListeners.isTowny()){		
+			if(!PlayerCacheUtil.getCachePermission(play, loc, block.getId(), (byte)0, TownyPermission.ActionType.BUILD))
+>>>>>>> origin3/master
 				return;
 		}
 
@@ -65,7 +87,11 @@ public class BlockPlace implements Listener {
 			if(!play.hasPermission("mcjobs.paycreative"))
 				return;
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin3/master
 		Iterator<Map.Entry<String, PlayerJobs>> it = PlayerJobs.getJobsList().entrySet().iterator();
 		String sJob = null;
 
@@ -78,7 +104,11 @@ public class BlockPlace implements Listener {
 
 				if(McJobs.getPlugin().isLogBlock()){
 					List<Integer> lTypes = Arrays.asList(event.getBlock().getTypeId());
+<<<<<<< HEAD
 
+=======
+					
+>>>>>>> origin3/master
 					if(McJobs.getPlugin().getBlockLogging().checkLogBlock(lTypes, play.getWorld(), play, event.getBlock().getLocation(), BlockChangeType.CREATED, timer))
 						return;
 				}
@@ -90,7 +120,11 @@ public class BlockPlace implements Listener {
 				CompCache comp = new CompCache(sJob, loc, play, block, "place");
 				CompData.getCompCache().add(comp);
 
+<<<<<<< HEAD
 //				if(PlayerJobs.joblist.get(sJob).getData().compJob().compBlock(block, play, "place")){
+=======
+//				if(PlayerJobs.joblist.get(sJob).getData().compJob().compBlock(block, play, "place")){					
+>>>>>>> origin3/master
 //					play.sendMessage("You placed " + ChatColor.DARK_GREEN + block + ChatColor.WHITE + ".");
 //					if(McJobs.getPlugin().getBlockLogging().getBuiltIn().containsKey(play.getWorld()))
 //						if(McJobs.getPlugin().getBlockLogging().getBuiltIn().get(play.getWorld()))
